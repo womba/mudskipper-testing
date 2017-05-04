@@ -15,7 +15,7 @@
 
 function womba {
 
-git clone https://github.com/womba/$1 -b testing /tmp/$1
+git clone https://github.com/womba/$1 /tmp/$1
 cp -R /tmp/$1/* /
 rm -R /tmp/$1
 
@@ -33,11 +33,9 @@ womba rune-app-folder
 womba rune-app-folder-plus
 womba rune-bash-profile
 womba rune-terminal-color
-#womba rune-wallpaper
 womba desktop-default
 womba rune-gnome-extensions
 womba rune-dash-settings
-
 
 
 systemctl enable runecore.service

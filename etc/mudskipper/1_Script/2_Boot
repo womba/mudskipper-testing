@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo mount drive
+read 
+cp ./config/pacman.conf /etc/
+pacman -Sy
 
 SCRIPTPATH=/etc/mudskipper
 

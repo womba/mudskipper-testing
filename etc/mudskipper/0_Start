@@ -49,7 +49,7 @@ source ./1_Script/1_Base
 #Download Mudskipper Script  #
 ##############################
 
-git clone https://github.com/womba/mudskipper -b testing /tmp/mudskipper
+git clone https://github.com/womba/mudskipper-testing /tmp/mudskipper
 cp -R /tmp/mudskipper/* $MOUNTPOINT
 rm -R /tmp/mudskipper
 cp -R $SCRIPTPATH/1_Script/config $MOUNTPOINT/$SCRIPTPATH/1_Script
