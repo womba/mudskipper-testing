@@ -1,0 +1,44 @@
+#!/bin/bash
+
+
+#########################
+#Remove Configuration	#
+#########################
+
+
+#rm -R /usr/share/backgrounds
+#rm -R /usr/share/gnome-background-properties
+
+#########################
+#Womba Function		#
+#########################
+
+function womba {
+
+git clone https://github.com/womba/$1 -b testing /tmp/$1
+cp -R /tmp/$1/* /
+rm -R /tmp/$1
+
+}
+
+#########################
+#Install Packages	#
+#########################
+
+womba womba
+womba icons-shadowless
+womba rune-core
+womba rune-sounds
+womba rune-app-folder
+womba rune-app-folder-plus
+womba rune-bash-profile
+womba rune-terminal-color
+#womba rune-wallpaper
+womba desktop-default
+womba rune-gnome-extensions
+womba rune-dash-settings
+
+
+
+systemctl enable runecore.service
+

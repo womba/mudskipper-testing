@@ -1,0 +1,168 @@
+#!/bin/bash
+
+function checkman {
+
+Installed=false
+
+pacman --noconfirm -S $1
+
+
+while [ "$Installed" = "false" ]
+do
+
+x=`pacman -Qs $1`
+
+
+if [ -n "$x" ]
+ then
+        echo
+        echo Package $1 successfully Installed.
+        Installed=true
+ else
+        echo Package $1 not Installed.
+        echo
+        echo Installing $1 ...
+        pacman --noconfirm -S $1
+fi
+
+
+done
+
+}
+
+
+#########################
+#Arch Install Scripts	#
+#########################
+
+
+checkman arch-install-scripts
+checkman dosfstools
+
+#########################
+#Other			#
+#########################
+
+checkman sudo
+checkman jre8-openjdk-headless
+
+
+#########################
+#Install X-Server	#
+#########################
+
+
+checkman xorg-server 
+checkman xorg-xinit
+checkman xorg-utils  
+checkman xorg-server-utils
+
+
+#########################
+#Install Xorg Drivers	#
+#########################
+
+
+checkman xorg-drivers
+
+
+#########################
+#Install  Network	#
+#########################
+
+
+checkman net-tools
+checkman ntp
+checkman avahi
+
+
+#########################
+#Install ACPI		#
+#########################
+
+
+checkman acpid
+
+
+#########################
+#Install Cronie		#
+#########################
+
+
+checkman cronie
+
+
+#########################
+#Install Audio		#
+#########################
+
+
+checkman alsa-utils
+checkman pulseaudio
+
+
+#########################
+#Install Free Fonts	#
+#########################
+
+
+checkman ttf-liberation 
+checkman ttf-dejavu
+
+
+#########################
+#Install Environment	#
+#########################
+
+
+checkman gdm
+checkman gnome
+checkman gnome-shell-extension-dash-to-dock
+checkman gnome-shell-extension-impatience
+checkman gnome-shell-extension-no-topleft-hot-corner
+checkman gnome-shell-extension-topicons-plus
+
+#########################
+#CD/DVD Support		#
+#########################
+
+checkman libcdio 
+checkman libdvdread 
+checkman libdvdcss 
+checkman libdvdnav
+
+
+#########################
+#Multimedia Codecs	#
+#########################
+
+
+checkman ffmpeg
+checkman gst-libav
+
+
+#########################
+#Filesystem Support	#
+#########################
+
+
+checkman ntfs-3g
+checkman exfat-utils 
+
+
+#########################
+#Printer Support	#
+#########################
+
+checkman cups
+checkman ghostscript
+checkman gsfonts
+checkman system-config-printer
+
+
+#########################
+#Iphone Support		#
+#########################
+
+
+checkman ifuse

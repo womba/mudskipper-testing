@@ -1,0 +1,215 @@
+#!/bin/bash
+
+MOUNTPOINT=/etc/mudskipper/mount
+
+#########################
+#Select Device          #
+#########################
+
+
+
+DEVICE=
+export answer
+answer=n
+FICHECK=y
+
+
+
+while [ "$answer" = "n" ]
+do
+
+
+
+RELOAD=y
+
+	while [ "$RELOAD"  = "y" ]
+	do
+
+		./1_Script/ui/clear
+		lsblk
+		DEFAULT=$(lsblk | grep -w disk)
+		DEFAULT=$(echo  ${DEFAULT//0/})
+		DEFAULT=$(echo  ${DEFAULT//1/})
+		DEFAULT=$(echo  ${DEFAULT//2/})
+		DEFAULT=$(echo  ${DEFAULT//3/})
+		DEFAULT=$(echo  ${DEFAULT//4/})
+		DEFAULT=$(echo  ${DEFAULT//5/})
+		DEFAULT=$(echo  ${DEFAULT//6/})
+		DEFAULT=$(echo  ${DEFAULT//7/})
+		DEFAULT=$(echo  ${DEFAULT//8/})
+		DEFAULT=$(echo  ${DEFAULT//9/})
+		DEFAULT=$(echo  ${DEFAULT//disk/})
+		DEFAULT=$(echo  ${DEFAULT//G/})
+		DEFAULT=$(echo  ${DEFAULT//,/})
+		DEFAULT=$(echo  ${DEFAULT//:/})
+		echo _______________________________
+		echo
+	
+		echo $DEFAULT	
+		echo	
+
+		echo ---------------------------------------------------------------
+		echo Select Device for Installation. \(Example: sdx\) \(R\=reload\)
+		echo ---------------------------------------------------------------
+		read DEVICE
+	
+
+		./1_Script/ui/clear
+
+
+		CONTROL=$(echo ${#DEVICE})
+
+
+
+		if [ "$CONTROL" = 3 ]
+		then
+
+			RELOAD=n
+		
+		fi
+
+	
+
+		
+
+	done
+
+	lsblk
+	echo _______________________________
+	echo
+	echo
+
+
+	echo
+	echo ------------------------------------------
+	echo Installing Arch-Linux on $DEVICE\? \(y/n\)
+	echo ------------------------------------------
+	read answer
+
+
+
+
+
+	while [ ! "$answer"  = "y" -a ! "$answer" = "n" ]
+	do
+		echo
+		echo --------------------------------------------
+		echo I could not read your answer. Please repeat.
+		echo Installing Arch-Linux on $DEVICE\? \(y/n\)
+		echo --------------------------------------------
+		read answer
+	done
+
+	while [ "$answer" = "n" ]
+	do
+		exit
+	done
+
+
+
+#########################
+#Cleaning up Device     #
+#########################
+
+	./1_Script/ui/info 1 Warning
+	./1_Script/ui/clear
+	sleep 1
+	./1_Script/ui/info 1 Warning
+	./1_Script/ui/clear                         
+	sleep 1
+	./1_Script/ui/info 1 Warning
+
+
+	echo
+	echo --------------------------------------------------------------------
+	echo This Installation will erase all Data on $DEVICE\. Continue? \(y/n\)
+	echo --------------------------------------------------------------------
+	read answer
+
+	
+	while [ ! "$answer"  = "y" -a ! "$answer" = "n" ]
+	do
+		echo
+		echo --------------------------------------------------------------------
+        	echo I could not read your answer. Please repeat.
+        	echo This Installation will erase all Data on $DEVICE\. Continue? \(y/n\)
+		echo --------------------------------------------------------------------
+        	read answer
+	done
+
+done 
+
+
+./1_Script/ui/clear
+
+echo ------------------
+echo Enter System Name:
+echo ------------------
+read Label
+
+./1_Script/ui/clear
+./1_Script/ui/coffee
+./1_Script/ui/clear
+./1_Script/ui/status o \  \  \  \  \  \  \ 
+
+DEVICE=/dev/$DEVICE
+echo DEVICE=$DEVICE > ./1_Script/config/device.config
+umount $DEVICE* &> /dev/null
+swapoff $DEVICE* &> /dev/null
+
+echo
+echo
+sudo dd if=/dev/zero of=$DEVICE bs=1k count=2048 
+
+
+#########################
+#Creating Partitions    #
+#########################
+
+
+echo -e "g\nn\n\n\n+512M\nn\n\n\n+1M\nn\n\n\n+2G\nn\n\n\n\nt\n1\n1\nt\n2\n4\nt\n3\n19\nw" | fdisk $DEVICE
+echo
+
+
+#########################
+# Formate Partitions    #
+#########################
+
+
+mkfs.vfat -F32  ${DEVICE}1
+mkswap ${DEVICE}3
+mkfs.ext4  -F ${DEVICE}4
+
+
+#########################
+# Partition Label	#
+#########################
+
+
+e2label ${DEVICE}4 $Label
+
+
+#########################
+# Preparing Directions  #
+#########################
+
+
+mkdir -p $MOUNTPOINT
+
+swapon ${DEVICE}3
+mount ${DEVICE}4 $MOUNTPOINT
+mkdir -p $MOUNTPOINT/boot/EFI
+mount ${DEVICE}1 $MOUNTPOINT/boot/EFI
+
+
+#########################
+# Installing Arch Base  #
+#########################
+
+pacstrap /etc/mudskipper/mount base base-devel
+
+#########################
+# Set Hostname		#
+#########################
+
+echo $Label > $MOUNTPOINT/etc/hostname

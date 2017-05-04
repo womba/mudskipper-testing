@@ -1,0 +1,150 @@
+#!/bin/bash
+
+
+##ooooooooooooooooooooooooooooooooooooooooooooo##
+#                                               #
+#	Install Default GUI Applications	#
+#                                               #
+##ooooooooooooooooooooooooooooooooooooooooooooo##
+
+function checkman {
+
+Installed=false
+
+pacman --noconfirm -S $1
+
+while [ "$Installed" = "false" ]
+do
+
+x=`pacman -Qs $1`
+
+
+
+if [ -n "$x" ]
+ then
+        echo
+        echo Package $1 successfully Installed.
+        Installed=true
+ else
+        echo Package $1 not Installed.
+        echo
+        echo Installing $1 ...
+	pacman --noconfirm -S $1
+fi
+
+
+done
+
+}
+
+
+
+#########################
+#System Folder          #
+#########################
+
+
+checkman gnome-software
+
+
+#########################
+#Multimedia Folder	#
+#########################
+
+
+checkman kdenlive
+
+checkman lollypop
+
+#########################
+#Games Folder		#
+#########################
+
+
+checkman aisleriot
+
+checkman gnome-mines
+
+checkman gnome-sudoku
+
+checkman gnome-2048
+
+
+#########################
+#Service  Folder	#
+#########################
+
+
+checkman gedit
+
+checkman asunder
+
+checkman brasero
+
+checkman file-roller
+
+checkman gnome-calendar
+
+
+#########################
+#Office Folder		#
+#########################
+
+checkman libreoffice-still 
+checkman libreoffice-still-de
+
+#########################
+#Web Folder		#
+#########################
+
+
+checkman firefox
+checkman firefox-i18n-de
+checkman firefox-ublock-origin
+
+checkman thunderbird
+checkman thunderbird-i18n-de
+
+checkman telepathy
+
+checkman telegram-desktop-bin
+
+#########################
+#Images Folder          #
+#########################
+
+
+checkman gimp
+
+
+##ooooooooooooooooooooooooooooooooooooooooooooo##
+#                                               #
+#			Other			#
+#                                               #
+##ooooooooooooooooooooooooooooooooooooooooooooo##
+
+
+#########################
+#Install TUI Apps	#
+#########################
+
+
+checkman wget
+checkman git
+
+#########################
+#Remove Unused Apps	#
+#########################
+
+
+pacman -Runs --noconfirm epiphany
+
+
+pacman --noconfirm -Sc && pacman-optimize
+
+#########################
+#Nvidia Driver		#
+#########################
+
+pacman -Sw --noconfirm nvidia
+pacman -Sw --noconfirm nvidia-libgl

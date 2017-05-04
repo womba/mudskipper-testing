@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ !  "$(whoami)" = "root" ]
+then
+        echo "Please run as root"
+else
+	cd /etc/mudskipper
+	/etc/mudskipper/0_Start
+
+fi
+
+exit
