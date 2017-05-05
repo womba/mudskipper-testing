@@ -26,14 +26,12 @@ rm -R /tmp/$1
 #########################
 
 womba womba
-womba icons-shadowless
 womba rune-core
 womba rune-sounds
 womba rune-app-folder
 womba rune-app-folder-plus
 womba rune-bash-profile
 womba rune-terminal-color
-womba desktop-default
 womba rune-gnome-extensions
 womba rune-dash-settings
 

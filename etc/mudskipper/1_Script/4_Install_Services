@@ -120,7 +120,8 @@ checkman gnome
 checkman gnome-shell-extension-dash-to-dock
 checkman gnome-shell-extension-impatience
 checkman gnome-shell-extension-no-topleft-hot-corner
-checkamn gnome-shell-extension-topicons-plus
+checkman gnome-shell-extension-topicons-plus
+checkman icons-shadowless
 
 #########################
 #CD/DVD Support		#
