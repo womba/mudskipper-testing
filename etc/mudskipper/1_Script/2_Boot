@@ -2,7 +2,8 @@
 
 echo mount drive
 read 
-cp /etc/mudskipper/script/config/pacman.conf /etc/
+cp /etc/mudskipper/1_Script/config/pacman.conf /etc/
+read
 pacman -Sy
 
 SCRIPTPATH=/etc/mudskipper
