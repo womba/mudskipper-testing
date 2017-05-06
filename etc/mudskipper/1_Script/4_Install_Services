@@ -1,50 +1,19 @@
 #!/bin/bash
 
-function checkman {
-
-Installed=false
-
-pacman --noconfirm -S $1
-
-
-while [ "$Installed" = "false" ]
-do
-
-x=`pacman -Qs $1`
-
-
-if [ -n "$x" ]
- then
-        echo
-        echo Package $1 successfully Installed.
-        Installed=true
- else
-        echo Package $1 not Installed.
-        echo
-        echo Installing $1 ...
-        pacman --noconfirm -S $1
-fi
-
-
-done
-
-}
-
-
 #########################
 #Arch Install Scripts	#
 #########################
 
 
-checkman arch-install-scripts
-checkman dosfstools
+pacman --noconfirm -S arch-install-scripts
+pacman --noconfirm -S dosfstools
 
 #########################
 #Other			#
 #########################
 
-checkman sudo
-checkman jre8-openjdk-headless
+pacman --noconfirm -S sudo
+pacman --noconfirm -S jre8-openjdk-headless
 
 
 #########################
@@ -52,10 +21,9 @@ checkman jre8-openjdk-headless
 #########################
 
 
-checkman xorg-server 
-checkman xorg-xinit
-checkman xorg-utils  
-checkman xorg-server-utils
+pacman --noconfirm -S xorg-server 
+pacman --noconfirm -S xorg-xinit
+pacman --noconfirm -S xorg-server-utils
 
 
 #########################
@@ -63,7 +31,7 @@ checkman xorg-server-utils
 #########################
 
 
-checkman xorg-drivers
+pacman --noconfirm -S xorg-drivers
 
 
 #########################
@@ -71,9 +39,9 @@ checkman xorg-drivers
 #########################
 
 
-checkman net-tools
-checkman ntp
-checkman avahi
+pacman --noconfirm -S net-tools
+pacman --noconfirm -S ntp
+pacman --noconfirm -S avahi
 
 
 #########################
@@ -81,7 +49,7 @@ checkman avahi
 #########################
 
 
-checkman acpid
+pacman --noconfirm -S acpid
 
 
 #########################
@@ -89,7 +57,7 @@ checkman acpid
 #########################
 
 
-checkman cronie
+pacman --noconfirm -S cronie
 
 
 #########################
@@ -97,8 +65,8 @@ checkman cronie
 #########################
 
 
-checkman alsa-utils
-checkman pulseaudio
+pacman --noconfirm -S alsa-utils
+pacman --noconfirm -S pulseaudio
 
 
 #########################
@@ -106,8 +74,8 @@ checkman pulseaudio
 #########################
 
 
-checkman ttf-liberation 
-checkman ttf-dejavu
+pacman --noconfirm -S ttf-liberation 
+pacman --noconfirm -S ttf-dejavu
 
 
 #########################
@@ -115,22 +83,22 @@ checkman ttf-dejavu
 #########################
 
 
-checkman gdm
-checkman gnome
-checkman gnome-shell-extension-dash-to-dock
-checkman gnome-shell-extension-impatience
-checkman gnome-shell-extension-no-topleft-hot-corner
-checkman gnome-shell-extension-topicons-plus
-checkman icons-shadowless
+pacman --noconfirm -S gdm
+pacman --noconfirm -S gnome
+pacman --noconfirm -S gnome-shell-extension-dash-to-dock
+pacman --noconfirm -S gnome-shell-extension-impatience
+pacman --noconfirm -S gnome-shell-extension-no-topleft-hot-corner
+pacman --noconfirm -S gnome-shell-extension-topicons-plus
+pacman --noconfirm -S icons-shadowless
 
 #########################
 #CD/DVD Support		#
 #########################
 
-checkman libcdio 
-checkman libdvdread 
-checkman libdvdcss 
-checkman libdvdnav
+pacman --noconfirm -S libcdio 
+pacman --noconfirm -S libdvdread 
+pacman --noconfirm -S libdvdcss 
+pacman --noconfirm -S libdvdnav
 
 
 #########################
@@ -138,8 +106,8 @@ checkman libdvdnav
 #########################
 
 
-checkman ffmpeg
-checkman gst-libav
+pacman --noconfirm -S ffmpeg
+pacman --noconfirm -S gst-libav
 
 
 #########################
@@ -147,18 +115,18 @@ checkman gst-libav
 #########################
 
 
-checkman ntfs-3g
-checkman exfat-utils 
+pacman --noconfirm -S ntfs-3g
+pacman --noconfirm -S exfat-utils 
 
 
 #########################
 #Printer Support	#
 #########################
 
-checkman cups
-checkman ghostscript
-checkman gsfonts
-checkman system-config-printer
+pacman --noconfirm -S cups
+pacman --noconfirm -S ghostscript
+pacman --noconfirm -S gsfonts
+pacman --noconfirm -S system-config-printer
 
 
 #########################
@@ -166,4 +134,4 @@ checkman system-config-printer
 #########################
 
 
-checkman ifuse
+pacman --noconfirm -S ifuse
