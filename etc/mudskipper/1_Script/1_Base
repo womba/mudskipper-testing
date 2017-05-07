@@ -59,8 +59,7 @@ RELOAD=y
 
 		CONTROL=$(echo ${#DEVICE})
 
-
-
+		
 		if [ "$CONTROL" = 3 ]
 		then
 
@@ -200,12 +199,13 @@ swapon ${DEVICE}3
 mount ${DEVICE}4 $MOUNTPOINT
 mkdir -p $MOUNTPOINT/boot/EFI
 mount ${DEVICE}1 $MOUNTPOINT/boot/EFI
-
+echo DEVICE=$DEVICE > /etc/mudskipper/mount/tmp/Mudskipper_Device
 
 #########################
 # Installing Arch Base  #
 #########################
-
+echo Kill me please!
+read
 pacstrap /etc/mudskipper/mount base base-devel
 
 #########################

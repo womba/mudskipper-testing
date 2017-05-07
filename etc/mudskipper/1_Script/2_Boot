@@ -1,5 +1,11 @@
 #!/bin/bash
 
+source /tmp/Mudskipper_Device
+
+echo $DEVICE
+read PLESE KILL ME!
+echo 
+
 echo mount drive
 read 
 cp /etc/mudskipper/1_Script/config/pacman.conf /etc/
@@ -12,8 +18,6 @@ SCRIPTPATH=/etc/mudskipper
 #Installing Bootmanager	#
 #########################
 
-
-source $SCRIPTPATH/1_Script/config/device.config
 
 pacman -S --noconfirm grub efibootmgr
 
