@@ -152,7 +152,9 @@ read Label
 ./1_Script/ui/status o \  \  \  \  \  \  \ 
 
 DEVICE=/dev/$DEVICE
+
 echo DEVICE=$DEVICE > ./1_Script/config/device.config
+
 umount $DEVICE* &> /dev/null
 swapoff $DEVICE* &> /dev/null
 
@@ -199,13 +201,19 @@ swapon ${DEVICE}3
 mount ${DEVICE}4 $MOUNTPOINT
 mkdir -p $MOUNTPOINT/boot/EFI
 mount ${DEVICE}1 $MOUNTPOINT/boot/EFI
-echo DEVICE=$DEVICE > /etc/mudskipper/mount/tmp/Mudskipper_Device
+
+echo DEVICE=$DEVICE > /etc/mudskipper/mount/etc/mudskipper/1_Script/config/Mudskipper_Device
 
 #########################
 # Installing Arch Base  #
 #########################
+
 echo Kill me please!
 read
+
+
+
+
 pacstrap /etc/mudskipper/mount base base-devel
 
 #########################

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source /tmp/Mudskipper_Device
+source /etc/mudskipper/1_Script/config/Mudskipper_Device
 
 echo $DEVICE
 read PLESE KILL ME!
