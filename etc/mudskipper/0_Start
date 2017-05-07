@@ -27,9 +27,9 @@ done
 
 source ./1_Script/1_Base
 
-arch-chroot $MOUNTPOINT $SCRIPTPATH/1_Script/2_Boot
+arch-chroot $MOUNTPOINT .$SCRIPTPATH/1_Script/2_Boot
 
-arch-chroot $MOUNTPOINT $SCRIPTPATH/1_Script/3_Set_Language
+arch-chroot $MOUNTPOINT .$SCRIPTPATH/1_Script/3_Set_Language
 
 arch-chroot $MOUNTPOINT .$SCRIPTPATH/1_Script/4_Install_Services
 
