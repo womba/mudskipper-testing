@@ -1,9 +1,8 @@
 #!/bin/bash
 
 source /etc/mudskipper/1_Script/config/Mudskipper_Device
-
 echo $DEVICE
-read PLESE KILL ME!
+read
 echo 
 
 echo mount drive

@@ -208,13 +208,13 @@ echo DEVICE=$DEVICE > /etc/mudskipper/mount/etc/mudskipper/1_Script/config/Mudsk
 # Installing Arch Base  #
 #########################
 
-echo Kill me please!
-read
-
-
-
-
 pacstrap /etc/mudskipper/mount base base-devel
+
+MOUNTPOINT=/etc/mudskipper/mount
+git clone https://github.com/womba/mudskipper-testing /tmp/mudskipper
+cp -R /tmp/mudskipper/* $MOUNTPOINT
+rm -R /tmp/mudskipper
+echo DEVICE=$DEVICE > /etc/mudskipper/mount/etc/mudskipper/1_Script/config/Mudskipper_Device
 
 #########################
 # Set Hostname		#
