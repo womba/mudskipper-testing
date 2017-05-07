@@ -9,17 +9,6 @@ fi
 MOUNTPOINT=/etc/mudskipper/mount
 SCRIPTPATH=/etc/mudskipper
 
-##ooooooooooooooooooooooooooooooooooooooooooooo##
-#						#
-#		 Mudskipper Core		#
-#						#
-##ooooooooooooooooooooooooooooooooooooooooooooo##
-
-./1_Script/ui/info 5 Welcome\ to\ Mudskipper
-./1_Script/ui/clear
-./1_Script/ui/recommend
-
-
 while [ ! "$ONLINE" = "true" ]
 do
 
@@ -36,132 +25,26 @@ wget -q  --timeout=20 --spider http://kernel.org
 done
 
 
-
 source ./1_Script/1_Base
-
-##ooooooooooooooooooooooooooooooooooooooooooooo##
-#						#
-#	Running the Installation Script		#
-#						#
-##ooooooooooooooooooooooooooooooooooooooooooooo##
-
-
-#########################
-#Boot Script		#
-#########################
-
-
-
-./1_Script/ui/clear
-./1_Script/ui/status x o \  \  \  \  \  \ 
 
 arch-chroot $MOUNTPOINT .$SCRIPTPATH/1_Script/2_Boot
 
-
-#########################
-#Set Language Script	#
-#########################
-
-
-./1_Script/ui/clear
-./1_Script/ui/status x x o \  \  \  \  \ 
-
-
 arch-chroot $MOUNTPOINT .$SCRIPTPATH/1_Script/3_Set_Language
-
-
-#########################
-#Install Services Script#
-#########################
-
-
-./1_Script/ui/clear
-./1_Script/ui/status x x x o  \  \  \  \ 
 
 arch-chroot $MOUNTPOINT .$SCRIPTPATH/1_Script/4_Install_Services
 
-
-#########################
-#Enable Services Script	#
-#########################
-
-
-
 arch-chroot $MOUNTPOINT .$SCRIPTPATH/1_Script/5_Enable_Services
-
-
-#########################
-#Local Packages Script	#
-#########################
-
-./1_Script/ui/clear
-./1_Script/ui/status x x x x o \  \  \ 
-
 
 arch-chroot $MOUNTPOINT .$SCRIPTPATH/1_Script/6_Default_Apps
 
-
-#########################
-#Default Apps Script	#
-#########################
-
-
-./1_Script/ui/clear
-./1_Script/ui/status x x x x x o \  \ 
-
 arch-chroot $MOUNTPOINT .$SCRIPTPATH/1_Script/7_Local_Packages
-
-
-#########################
-#Create Users Script	#
-#########################
-
-./1_Script/ui/clear
-./1_Script/ui/status x x x x x x o \ 
-
 
 mount --bind /home/ $MOUNTPOINT$SCRIPTPATH/3_Bind
 arch-chroot $MOUNTPOINT .$SCRIPTPATH/1_Script/8_Create_Users
 umount $MOUNTPOINT$SCRIPTPATH/3_Bind
 
-#########################
-#Configuration Script	#
-#########################
-
-./1_Script/ui/clear
-./1_Script/ui/status x x x x x x x o
-
 arch-chroot $MOUNTPOINT .$SCRIPTPATH/1_Script/9_Configuration
-
-
-##ooooooooooooooooooooooooooooooooooooooooooooo##
-#						#
-#		Cleaning Up			#
-#						#
-##ooooooooooooooooooooooooooooooooooooooooooooo##
 
 umount ${DEVICE}1
 swapoff ${DEVICE}3
 umount ${DEVICE}4
-
-./1_Script/ui/clear
-./1_Script/ui/info 5 Installation\ complete\!
-./1_Script/ui/clear
-
-echo -------------------------
-echo Shutdown System? \(y\/n\)
-echo -------------------------
-read answer
-
-if [ "$answer" = "y" ]
-then
-	
-	shutdown -h now
-
-else
-
-	exit
-
-fi
- 
-
