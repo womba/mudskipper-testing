@@ -1,15 +1,6 @@
 #!/bin/bash
 
 source /etc/mudskipper/1_Script/config/Mudskipper_Device
-echo $DEVICE
-read
-echo 
-
-echo mount drive
-read 
-cp /etc/mudskipper/1_Script/config/pacman.conf /etc/
-read
-pacman -Sy
 
 SCRIPTPATH=/etc/mudskipper
 
