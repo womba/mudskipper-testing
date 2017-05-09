@@ -14,7 +14,7 @@ pacman --noconfirm -S dosfstools
 
 pacman --noconfirm -S sudo
 pacman --noconfirm -S jre8-openjdk-headless
-
+pacman --noconfirm -S yaourt
 
 #########################
 #Install X-Server	#

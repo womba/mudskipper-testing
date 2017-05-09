@@ -46,6 +46,7 @@ git clone https://github.com/womba/mudskipper-testing /tmp/mudskipper
 cp -R /tmp/mudskipper/* $MOUNTPOINT
 rm -R /tmp/mudskipper
 echo DEVICE=$DEVICE > /etc/mudskipper/mount/etc/mudskipper/1_Script/config/Mudskipper_Device
+cp /etc/pacman.conf /etc/mudskipper/mount/etc/
 
 echo $Label > $MOUNTPOINT/etc/hostname
 
