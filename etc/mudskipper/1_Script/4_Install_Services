@@ -84,11 +84,51 @@ pacman --noconfirm -S ttf-dejavu
 
 
 pacman --noconfirm -S gdm
-pacman --noconfirm -S gnome
+pacman --noconfirm -S gnome-shell
+pacman --noconfirm -S gnome-shell-extensions
 pacman --noconfirm -S gnome-shell-extension-dash-to-dock
 pacman --noconfirm -S gnome-shell-extension-impatience
 pacman --noconfirm -S gnome-shell-extension-no-topleft-hot-corner
 pacman --noconfirm -S gnome-shell-extension-topicons-plus
+pacman --noconfirm -S adwaita-icon-theme
+pacman --noconfirm -S baobab
+pacman --noconfirm -S empathy
+pacman --noconfirm -S eog
+pacman --noconfirm -S evince
+pacman --noconfirm -S gnome-backgrounds
+pacman --noconfirm -S gnome-calculator
+pacman --noconfirm -S gnome-contacts
+pacman --noconfirm -S gnome-control-center
+pacman --noconfirm -S gnome-disk-utility
+pacman --noconfirm -S gnome-keyring
+pacman --noconfirm -S gnome-screenshot
+pacman --noconfirm -S gnome-session
+pacman --noconfirm -S gnome-settings-daemon
+pacman --noconfirm -S gnome-system-monitor
+pacman --noconfirm -S gnome-terminal
+pacman --noconfirm -S gnome-themes-standard
+pacman --noconfirm -S gnome-user-docs
+pacman --noconfirm -S gnome-user-share
+pacman --noconfirm -S grilo-plugins
+pacman --noconfirm -S gtk3-print-backends
+pacman --noconfirm -S gvfs
+pacman --noconfirm -S gvfs-afc
+pacman --noconfirm -S gvfs-goa
+pacman --noconfirm -S gvfs-google
+pacman --noconfirm -S gvfs-gphoto2
+pacman --noconfirm -S gvfs-mtp
+pacman --noconfirm -S gvfs-nfs
+pacman --noconfirm -S gvfs-smb
+pacman --noconfirm -S mousetweaks
+pacman --noconfirm -S mutter
+pacman --noconfirm -S nautilus
+pacman --noconfirm -S networkmanager
+pacman --noconfirm -S sushi
+pacman --noconfirm -S totem
+pacman --noconfirm -S tracker
+pacman --noconfirm -S vino
+pacman --noconfirm -S xdg-user-dirs-gtk
+pacman --noconfirm -S yelp
 pacman --noconfirm -S icons-shadowless
 
 #########################

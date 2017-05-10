@@ -99,19 +99,4 @@ pacman --noconfirm -S gimp
 pacman --noconfirm -S wget
 pacman --noconfirm -S git
 
-#########################
-#Remove Unused Apps	#
-#########################
 
-
-pacman -Runs --noconfirm epiphany
-
-
-pacman --noconfirm -Sc && pacman-optimize
-
-#########################
-#Nvidia Driver		#
-#########################
-
-pacman -Sw --noconfirm nvidia
-pacman -Sw --noconfirm nvidia-libgl
