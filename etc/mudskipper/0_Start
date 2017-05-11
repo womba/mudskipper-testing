@@ -31,13 +31,13 @@ arch-chroot $MOUNTPOINT .$SCRIPTPATH/1_Script/2_Boot
 
 arch-chroot $MOUNTPOINT .$SCRIPTPATH/1_Script/3_Set_Language
 
-arch-chroot $MOUNTPOINT .$SCRIPTPATH/1_Script/4_Install_Services
+arch-chroot $MOUNTPOINT .$SCRIPTPATH/1_Script/4_Install_System
 
-arch-chroot $MOUNTPOINT .$SCRIPTPATH/1_Script/5_Enable_Services
+arch-chroot $MOUNTPOINT .$SCRIPTPATH/1_Script/5_Install_Environment
 
-arch-chroot $MOUNTPOINT .$SCRIPTPATH/1_Script/6_Default_Apps
+arch-chroot $MOUNTPOINT .$SCRIPTPATH/1_Script/6_Install_Applications
 
-arch-chroot $MOUNTPOINT .$SCRIPTPATH/1_Script/7_Local_Packages
+arch-chroot $MOUNTPOINT .$SCRIPTPATH/1_Script/7_Enable_Services
 
 mount --bind /home/ $MOUNTPOINT$SCRIPTPATH/3_Bind
 arch-chroot $MOUNTPOINT .$SCRIPTPATH/1_Script/8_Create_Users

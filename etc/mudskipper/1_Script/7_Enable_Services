@@ -5,9 +5,16 @@
 #Remove Configuration	#
 #########################
 
-
-#rm -R /usr/share/backgrounds
-#rm -R /usr/share/gnome-background-properties
+systemctl enable dhcpcd
+systemctl enable ntpd.service
+systemctl enable avahi-daemon.service
+systemctl enable acpid
+systemctl enable cronie
+systemctl enable gdm
+systemctl enable NetworkManager.service
+systemctl enable org.cupsd.service
+systemctl enable cups-browsed.service
+systemctl enable org.cups.cupsd.service
 
 #########################
 #Womba Function		#

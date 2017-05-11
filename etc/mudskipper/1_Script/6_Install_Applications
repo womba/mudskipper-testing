@@ -1,0 +1,38 @@
+#!/bin/bash
+
+
+pacman --noconfirm -S baobab
+pacman --noconfirm -S empathy
+pacman --noconfirm -S eog
+pacman --noconfirm -S evince
+pacman --noconfirm -S gnome-calculator
+pacman --noconfirm -S gnome-contacts
+pacman --noconfirm -S gnome-control-center
+pacman --noconfirm -S gnome-disk-utility
+pacman --noconfirm -S gnome-screenshot
+pacman --noconfirm -S gnome-system-monitor
+pacman --noconfirm -S gnome-terminal
+pacman --noconfirm -S nautilus
+pacman --noconfirm -S totem
+pacman --noconfirm -S gnome-software
+pacman --noconfirm -S kdenlive
+pacman --noconfirm -S aisleriot
+pacman --noconfirm -S gnome-mines
+pacman --noconfirm -S gnome-sudoku
+pacman --noconfirm -S gnome-2048
+pacman --noconfirm -S gedit
+pacman --noconfirm -S asunder
+pacman --noconfirm -S brasero
+pacman --noconfirm -S file-roller
+pacman --noconfirm -S gnome-calendar
+pacman --noconfirm -S libreoffice-still
+pacman --noconfirm -S libreoffice-still-de
+pacman --noconfirm -S firefox
+pacman --noconfirm -S firefox-i18n-de
+pacman --noconfirm -S firefox-ublock-origin
+pacman --noconfirm -S thunderbird
+pacman --noconfirm -S thunderbird-i18n-de
+pacman --noconfirm -S telepathy
+pacman --noconfirm -S telegram-desktop-bin
+pacman --noconfirm -S gimp
+
