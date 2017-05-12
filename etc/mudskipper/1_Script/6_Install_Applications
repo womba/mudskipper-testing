@@ -25,8 +25,8 @@ pacman --noconfirm -S asunder
 pacman --noconfirm -S brasero
 pacman --noconfirm -S file-roller
 pacman --noconfirm -S gnome-calendar
-pacman --noconfirm -S libreoffice-still
-pacman --noconfirm -S libreoffice-still-de
+pacman --noconfirm -S libreoffice-fresh
+pacman --noconfirm -S libreoffice-fresh-de
 pacman --noconfirm -S firefox
 pacman --noconfirm -S firefox-i18n-de
 pacman --noconfirm -S firefox-ublock-origin

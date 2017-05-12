@@ -50,5 +50,3 @@ cp /etc/pacman.conf /etc/mudskipper/mount/etc/
 
 echo $Label > $MOUNTPOINT/etc/hostname
 
-echo Check
-read
