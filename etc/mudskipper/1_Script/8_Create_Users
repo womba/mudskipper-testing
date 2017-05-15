@@ -52,118 +52,10 @@ fi
 
 
 
-#########################
-#Setup Existing User	#
-#########################
-
-$SCRIPTPATH/1_Script/ui/clear
+clear
 
 
-CLONE=false
 EXIST=false
-
-while [ "$CLONE" = "false" ]
-do
-
-	echo -------------------------------
-	echo Clone an existing User? \(y/n\)
-	echo -------------------------------
-	read answer
-	echo
-	
-	while [ "$answer" = "n" ]
-	do
-	CLONE=true	
-	answer=o
-	done
-	
-	while [ ! "$answer"  = "y" -a ! "$answer" = "n" -a ! "$answer" = "o"  ]
-	do
-
-		$SCRIPTPATH/1_Script/ui/clear
-		echo --------------------------------------------
-		echo I could not read your answer. Please repeat.
-		echo Clone an existing user? \(y/n\)
-		echo --------------------------------------------
-		read answer
-	done
-
-
-	while [ "$answer" = "y" ]
-	do
-		$SCRIPTPATH/1_Script/ui/clear
-                ls $SCRIPTPATH/3_Bind
-		echo ---------------------
-		echo Select user to clone:
-		echo ---------------------
-        	read USER
-		
-		if [ ! -d "$SCRIPTPATH/3_Bind/$USER" ]; then
-			
-			$SCRIPTPATH/1_Script/ui/clear
-        		$SCRIPTPATH/1_Script/ui/info 5 User\ \"$USER\"\ doesn\’t\ exist.
-        		
-			CLONE=false
-			answer=n
-		else
-	
-			CLONE=true
-			EXIST=true
-			
-			
-			useradd -m -G wheel -s /bin/bash ${USER}
-			changepass   
-        		$SCRIPTPATH/1_Script/ui/clear
-			
-
-
-
-
-			gpasswd -a $USER wheel
-			gpasswd -a $USER audio
-			gpasswd -a $USER video
-			gpasswd -a $USER games
-			gpasswd -a $USER power
-			
-			INPATH=$SCRIPTPATH/3_Bind/$USER
-			$SCRIPTPATH/1_Script/ui/clear
-			echo ---------------------------------
-			echo Copy personal files. Please Wait.
-			echo ---------------------------------
-
-			cp -R $INPATH/* /home/$USER
-			
-			$SCRIPTPATH/1_Script/ui/clear
-			echo ---------------------------------
-			echo Copy configuration files? \(y/n\)
-			echo ---------------------------------
-			read answer
-			
-			if [ "$answer" = "y" ]
-			then
-
-			cp -R $INPATH/.thunderbird /home/$USER &> /dev/null
-			#cp -R $INPATH/.mozilla /home/$USER &> /dev/null 
-			cp -R $INPATH/.local /home/$USER &> /dev/null
-			cp -R $INPATH/.gimp* /home/$USER &> /dev/null			
-			cp -R $INPATH/.TelegramDesktop /home/$USER &> /dev/null
-
-			fi
-
-			chown -R $USER /home/$USER
-			
-			$SCRIPTPATH/1_Script/ui/clear
-			
-			echo -------------------------
-			echo Clone next User? \(y/n\)
-        		echo -------------------------
-			read answer
-
-		fi
-	done	
-done
-
-
 
 #########################
 #Setup New User		#
@@ -231,6 +123,9 @@ do
 		gpasswd -a $USER video
 		gpasswd -a $USER games
 		gpasswd -a $USER power
+
+		su $USER  -c "dbus-launch gsettings set org.gnome.desktop.interface icon-theme Sardi"
+
 		
 		$SCRIPTPATH/1_Script/ui/clear
 		echo ---------------------
