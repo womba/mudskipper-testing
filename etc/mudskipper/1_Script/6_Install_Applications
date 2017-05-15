@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+pacman --noconfirm -S spotify
 pacman --noconfirm -S baobab
 pacman --noconfirm -S empathy
 pacman --noconfirm -S eog

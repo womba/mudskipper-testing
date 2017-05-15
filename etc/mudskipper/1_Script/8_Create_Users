@@ -123,9 +123,6 @@ do
 		gpasswd -a $USER video
 		gpasswd -a $USER games
 		gpasswd -a $USER power
-
-		su $USER  -c "dbus-launch gsettings set org.gnome.desktop.interface icon-theme Sardi"
-                su $USER  -c /etc/mudskipper/1_Script/gsett
 		
 		$SCRIPTPATH/1_Script/ui/clear
 		echo ---------------------

@@ -6,7 +6,7 @@
 
 
 echo blacklist pcspkr >> /etc/modprobe.d/spkr.conf
-
+glib-compile-schemas /usr/share/glib-2.0/schemas/
 
 
 
