@@ -1,0 +1,10 @@
+#!/bin/bash
+
+dbus-launch gsettings set org.gnome.shell enabled-extensions "['dash-to-dock@micxgx.gmail.com']"
+dbus-launch gsettings set org.gnome.shell enabled-extensions "['drive-menu@gnome-shell-extensions.gcampax.github.com']"
+dbus-launch gsettings set org.gnome.shell enabled-extensions "['places-menu@gnome-shell-extensions.gcampax.github.com']"
+dbus-launch gsettings set org.gnome.shell enabled-extensions "['impatience@gfxmonk.net']"
+dbus-launch gsettings set org.gnome.shell enabled-extensions "['launch-new-instance@gnome-shell-extensions.gcampax.github.com']"
+dbus-launch gsettings set org.gnome.shell enabled-extensions "['nohotcorner@azuri.free.fr']"
+dbus-launch gsettings set org.gnome.shell enabled-extensions "['TopIcons@phocean.net']"
+dbus-launch gsettings set org.gnome.shell enabled-extensions "['hide-app-icon@mrapp.sourceforge.com']"
