@@ -125,7 +125,7 @@ do
 		gpasswd -a $USER power
 
 		su $USER  -c "dbus-launch gsettings set org.gnome.desktop.interface icon-theme Sardi"
-
+                su $USER  -c "dbus-launch gsettings set org.gnome.shell enabled-extensions "['dash-to-dock@micxgx.gmail.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'impatience@gfxmonk.net', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'nohotcorner@azuri.free.fr', 'TopIcons@phocean.net', 'hide-app-icon@mrapp.sourceforge.com']"
 		
 		$SCRIPTPATH/1_Script/ui/clear
 		echo ---------------------
