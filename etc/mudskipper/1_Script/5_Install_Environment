@@ -4,6 +4,7 @@ pacman --noconfirm -S gdm
 pacman --noconfirm -S gnome-shell
 pacman --noconfirm -S gnome-shell-extensions
 pacman --noconfirm -S gnome-shell-extension-dash-to-dock
+pacman --noconfirm -S gnome-shell-extension-hide-app-icon
 pacman --noconfirm -S gnome-shell-extension-impatience
 pacman --noconfirm -S gnome-shell-extension-no-topleft-hot-corner
 pacman --noconfirm -S gnome-shell-extension-topicons-plus
