@@ -35,11 +35,10 @@ rm -R /tmp/$1
 womba womba
 womba rune-core
 womba rune-sounds
-womba rune-app-folder
-womba rune-app-folder-plus
+#womba rune-app-folder
+#womba rune-app-folder-plus
 womba rune-bash-profile
 womba rune-terminal-color
-womba rune-dash-settings
 
 
 systemctl enable runecore.service
