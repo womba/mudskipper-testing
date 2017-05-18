@@ -20,25 +20,25 @@ systemctl enable org.cups.cupsd.service
 #Womba Function		#
 #########################
 
-function womba {
+#function womba {
 
-git clone https://github.com/womba/$1 /tmp/$1
-cp -R /tmp/$1/* /
-rm -R /tmp/$1
+#git clone https://github.com/womba/$1 /tmp/$1
+#cp -R /tmp/$1/* /
+#rm -R /tmp/$1
 
-}
+#}
 
 #########################
 #Install Packages	#
 #########################
 
-womba womba
-womba rune-core
-womba rune-sounds
+#womba womba
+#womba rune-core
+#womba rune-sounds
 #womba rune-app-folder
 #womba rune-app-folder-plus
-womba rune-bash-profile
-womba rune-terminal-color
+#womba rune-bash-profile
+#womba rune-terminal-color
 
 
 systemctl enable runecore.service
