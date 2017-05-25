@@ -8,6 +8,7 @@ pacman --noconfirm -S gnome-shell-extension-hide-app-icon
 pacman --noconfirm -S gnome-shell-extension-impatience
 pacman --noconfirm -S gnome-shell-extension-no-topleft-hot-corner
 pacman --noconfirm -S gnome-shell-extension-topicons-plus
+pacman --noconfirm -S gnome-app-folder-plus
 pacman --noconfirm -S sardi-icons
 pacman --noconfirm -S breeze-default-cursor-theme
 pacman --noconfirm -S adwaita-icon-theme
