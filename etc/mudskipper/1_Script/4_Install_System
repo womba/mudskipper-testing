@@ -24,6 +24,7 @@ pacman --noconfirm -Sy libdvdread
 pacman --noconfirm -Sy libdvdcss 
 pacman --noconfirm -Sy libdvdnav
 pacman --noconfirm -Sy ffmpeg
+pacman --noconfirm -Sy vorbis-tools
 pacman --noconfirm -Sy gst-libav
 pacman --noconfirm -Sy ntfs-3g
 pacman --noconfirm -Sy exfat-utils 
