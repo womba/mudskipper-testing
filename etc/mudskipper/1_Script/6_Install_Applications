@@ -35,4 +35,4 @@ pacman --noconfirm -S thunderbird-i18n-de
 pacman --noconfirm -S telepathy
 pacman --noconfirm -S telegram-desktop-bin
 pacman --noconfirm -S gimp
-
+pacman --noconfirm -S quodlibet
