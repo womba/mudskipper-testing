@@ -16,6 +16,10 @@ pacman --noconfirm -S nautilus
 pacman --noconfirm -S totem
 pacman --noconfirm -S gnome-software
 pacman --noconfirm -S kdenlive
+pacman --noconfirm -S frei0r-plugins
+pacman --noconfirm -S breeze-icons
+pacman --noconfirm -S dvdauthor
+pacman --noconfirm -S xine-ui
 pacman --noconfirm -S aisleriot
 pacman --noconfirm -S gnome-mines
 pacman --noconfirm -S gnome-sudoku
