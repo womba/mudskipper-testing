@@ -10,6 +10,7 @@ pacman --noconfirm -Sy xorg-xinit
 pacman --noconfirm -Sy xorg-server-utils
 pacman --noconfirm -Sy xorg-drivers
 pacman --noconfirm -Sy openssh
+pacman --noconfirm -Sy sshfs
 pacman --noconfirm -Sy net-tools
 pacman --noconfirm -Sy ntp
 pacman --noconfirm -Sy avahi
