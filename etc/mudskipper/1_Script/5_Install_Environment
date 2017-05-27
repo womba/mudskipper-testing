@@ -13,7 +13,6 @@ pacman --noconfirm -S snowdrop-backgrounds
 pacman --noconfirm -S sardi-icons
 pacman --noconfirm -S breeze-default-cursor-theme
 pacman --noconfirm -S adwaita-icon-theme
-pacman --noconfirm -S gnome-backgrounds
 pacman --noconfirm -S gnome-keyring
 pacman --noconfirm -S gnome-session
 pacman --noconfirm -S gnome-settings-daemon
