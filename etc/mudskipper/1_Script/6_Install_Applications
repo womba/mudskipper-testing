@@ -37,6 +37,6 @@ pacman --noconfirm -S firefox-ublock-origin
 pacman --noconfirm -S thunderbird
 pacman --noconfirm -S thunderbird-i18n-de
 pacman --noconfirm -S telepathy
-pacman --noconfirm -S telegram-desktop-bin
+pacman --noconfirm -S telegram-desktop
 pacman --noconfirm -S gimp
 pacman --noconfirm -S quodlibet
