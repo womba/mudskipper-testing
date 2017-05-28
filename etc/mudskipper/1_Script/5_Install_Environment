@@ -38,5 +38,4 @@ pacman --noconfirm -S tracker
 pacman --noconfirm -S vino
 pacman --noconfirm -S xdg-user-dirs-gtk
 pacman --noconfirm -S yelp
-pacman --noconfirm -S icons-shadowless
 
