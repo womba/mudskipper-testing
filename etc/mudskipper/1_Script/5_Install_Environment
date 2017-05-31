@@ -11,7 +11,7 @@ pacman --noconfirm -S gnome-shell-extension-topicons-plus
 pacman --noconfirm -S gnome-app-folder-plus
 pacman --noconfirm -S snowdrop-backgrounds
 pacman --noconfirm -S sardi-icons
-pacman --noconfirm -S theme-flatplat-white
+pacman --noconfirm -S theme-snowdrop
 pacman --noconfirm -S breeze-default-cursor-theme
 pacman --noconfirm -S adwaita-icon-theme
 pacman --noconfirm -S gnome-keyring
