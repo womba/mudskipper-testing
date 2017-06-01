@@ -15,5 +15,5 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 
 
-sed -i "s/HOOKS=\"base udev autodetect modconf block filesystems keyboard fsck\"/HOOKS=\"base udev block autodetect modconf filesystems keyboard fsck\"/g" /etc/mkinitcpio.conf
+sed -i "s/HOOKS=\"base udev autodetect modconf block filesystems keyboard fsck\"/HOOKS=\"base udev block autodetect modconf filesystems keyboard\"/g" /etc/mkinitcpio.conf
 mkinitcpio  -p linux
