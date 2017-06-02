@@ -6,6 +6,7 @@ SCRIPTPATH=/etc/mudskipper
 
 pacman -Sy --noconfirm grub efibootmgr
 pacman -Sy --noconfirm linux-zen
+pacman -R --noconfirm linux
 
 grub-install --target=x86_64-efi  --efi-directory=/boot/EFI --bootloader-id=grub-efi --removable 
 grub-install --target=i386-pc  --boot-directory=/boot --bootloader-id=grub-bios --removable $DEVICE
@@ -13,4 +14,4 @@ grub-install --target=i386-pc  --boot-directory=/boot --bootloader-id=grub-bios 
 grub-mkconfig -o /boot/grub/grub.cfg
 
 sed -i "s/HOOKS=\"base udev autodetect modconf block filesystems keyboard fsck\"/HOOKS=\"base udev block autodetect modconf filesystems keyboard fsck\"/g" /etc/mkinitcpio.conf
-mkinitcpio  -p linux
+mkinitcpio  -p linux-zen
