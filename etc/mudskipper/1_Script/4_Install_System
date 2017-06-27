@@ -29,10 +29,6 @@ pacman --noconfirm -Sy vorbis-tools
 pacman --noconfirm -Sy gst-libav
 pacman --noconfirm -Sy ntfs-3g
 pacman --noconfirm -Sy exfat-utils 
-pacman --noconfirm -Sy cups
-pacman --noconfirm -Sy ghostscript
-pacman --noconfirm -Sy gsfonts
-pacman --noconfirm -Sy system-config-printer
 pacman --noconfirm -Sy ifuse
 pacman --noconfirm -Sy wget
 pacman --noconfirm -Sy git
@@ -51,3 +47,17 @@ pacman --noconfirm -Sy modemmanager
 pacman --noconfirm -Sy mobile-broadband-provider-info
 pacman --noconfirm -Sy nm-connection-editor
 pacman --noconfirm -Sy unrar
+
+
+# Printer
+
+pacman --noconfirm -Sy cups
+pacman --noconfirm -Sy cups-pk-helper
+pacman --noconfirm -Sy gsfonts
+pacman --noconfirm -Sy hplip
+pacman --noconfirm -Sy python-gobject
+pacman --noconfirm -Sy python-pyqt5
+pacman --noconfirm -Sy python2-gnomekeyring
+pacman --noconfirm -Sy splix
+pacman --noconfirm -Sy system-config-printer
+
