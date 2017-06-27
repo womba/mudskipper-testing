@@ -12,9 +12,11 @@ systemctl enable acpid
 systemctl enable cronie
 systemctl enable gdm
 systemctl enable NetworkManager.service
+systemctl enable modemmanger
 systemctl enable org.cupsd.service
 systemctl enable cups-browsed.service
 systemctl enable org.cups.cupsd.service
+systemctl enable ModemManager.service
 
 #########################
 #Womba Function		#
