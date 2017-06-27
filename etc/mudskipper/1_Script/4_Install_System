@@ -60,4 +60,4 @@ pacman --noconfirm -Sy python-pyqt5
 pacman --noconfirm -Sy python2-gnomekeyring
 pacman --noconfirm -Sy splix
 pacman --noconfirm -Sy system-config-printer
-
+pacman --noconfirm -Sy nss-mdns
