@@ -5,13 +5,14 @@ source /etc/mudskipper/1_Script/config/Mudskipper_Device
 SCRIPTPATH=/etc/mudskipper
 
 pacman -Sy --noconfirm grub efibootmgr
+pacman -Sy --noconfirm linux-hardened
+
+sed -i "s/HOOKS=\"base udev autodetect modconf block filesystems keyboard fsck\"/HOOKS=\"base udev block autodetect modconf filesystems keyboard fsck\"/g" /etc/mkinitcpio.conf
+mkinitcpio  -p linux-hardened
 
 grub-install --target=x86_64-efi  --efi-directory=/boot/EFI --bootloader-id=grub-efi --removable 
 grub-install --target=i386-pc  --boot-directory=/boot --bootloader-id=grub-bios --removable $DEVICE
 
 grub-mkconfig -o /boot/grub/grub.cfg
 
-sed -i "s/HOOKS=\"base udev autodetect modconf block filesystems keyboard fsck\"/HOOKS=\"base udev block autodetect modconf filesystems keyboard fsck\"/g" /etc/mkinitcpio.conf
 
-pacman -Sy linux-hardened
-mkinitcpio  -p linux-hardened
