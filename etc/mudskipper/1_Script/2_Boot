@@ -12,4 +12,6 @@ grub-install --target=i386-pc  --boot-directory=/boot --bootloader-id=grub-bios 
 grub-mkconfig -o /boot/grub/grub.cfg
 
 sed -i "s/HOOKS=\"base udev autodetect modconf block filesystems keyboard fsck\"/HOOKS=\"base udev block autodetect modconf filesystems keyboard fsck\"/g" /etc/mkinitcpio.conf
-mkinitcpio  -p linux
+
+pacman -Sy linux-hardened
+mkinitcpio  -p linux-hardened
