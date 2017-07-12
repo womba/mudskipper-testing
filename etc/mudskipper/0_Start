@@ -27,8 +27,6 @@ done
 
 source ./1_Script/1_Base
 
-pacstrap $MOUNTPOINT corn-mirrorlist
-read
 
 arch-chroot $MOUNTPOINT .$SCRIPTPATH/1_Script/2_Boot
 
