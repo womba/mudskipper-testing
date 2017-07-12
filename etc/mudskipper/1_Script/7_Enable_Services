@@ -17,31 +17,5 @@ systemctl enable org.cupsd.service
 systemctl enable cups-browsed.service
 systemctl enable org.cups.cupsd.service
 systemctl enable ModemManager.service
-
-#########################
-#Womba Function		#
-#########################
-
-#function womba {
-
-#git clone https://github.com/womba/$1 /tmp/$1
-#cp -R /tmp/$1/* /
-#rm -R /tmp/$1
-
-#}
-
-#########################
-#Install Packages	#
-#########################
-
-#womba womba
-#womba rune-core
-#womba rune-sounds
-#womba rune-app-folder
-#womba rune-app-folder-plus
-#womba rune-bash-profile
-#womba rune-terminal-color
-
-
 systemctl enable runecore.service
 
