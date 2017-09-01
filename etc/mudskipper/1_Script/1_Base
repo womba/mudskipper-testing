@@ -42,7 +42,7 @@ mount ${DEVICE}1 $MOUNTPOINT/boot/EFI
 
 pacstrap /etc/mudskipper/mount base base-devel
 pacstrap /etc/mudskipper/mount corn-mirrorlist
-read
+
 
 git clone https://github.com/womba/mudskipper-testing /tmp/mudskipper
 cp -R /tmp/mudskipper/* $MOUNTPOINT
@@ -50,7 +50,7 @@ rm -R /tmp/mudskipper
 echo DEVICE=$DEVICE > /etc/mudskipper/mount/etc/mudskipper/1_Script/config/Mudskipper_Device
 echo $WORKPATH
 cp $WORKPATH/config/pacman.conf /etc/mudskipper/mount/etc/
-read
+
 
 echo $Label > $MOUNTPOINT/etc/hostname
 
