@@ -1,1 +1,2 @@
 Include Japanese Font
+Hide Scrollbar in Terminal
