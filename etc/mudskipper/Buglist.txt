@@ -1,2 +1,3 @@
 Include Japanese Font
 Hide Scrollbar in Terminal
+Pacman PGP-Schlüßel importieren
