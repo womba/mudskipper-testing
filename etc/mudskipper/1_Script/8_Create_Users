@@ -142,12 +142,8 @@ echo %wheel ALL=\(ALL\) ALL >> /etc/sudoers
 #Set Root Password	#
 #########################
 
-USER=root
+RAND1=$(($RANDOM % 40 + 20))
+RAND3=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w $RAND1 | head -n 1)
 
-$SCRIPTPATH/1_Script/ui/clear
-echo -----------------------------
-echo Set a root Password? \(y\/n\)
-echo -----------------------------
-read answer
+echo root:$RAND3 | chpasswd
 
-changepass
