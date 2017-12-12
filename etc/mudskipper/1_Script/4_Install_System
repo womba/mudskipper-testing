@@ -61,3 +61,8 @@ pacman --noconfirm -Sy python2-gnomekeyring
 pacman --noconfirm -Sy splix
 pacman --noconfirm -Sy system-config-printer
 pacman --noconfirm -Sy nss-mdns
+
+
+# Graphic Tablet
+
+pacman --noconfirm -Sy xf86-input-wacom 
